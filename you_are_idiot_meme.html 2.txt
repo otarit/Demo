@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You are an idiot! Ha ha ha ha ha ha ha! - @w3gj</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            cursor: none;
+            user-select: none;
+            background: #000;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff, #ffff00, #ff00ff, #00ffff);
+            background-size: 600% 600%;
+            animation: rainbowBg 0.5s linear infinite;
+        }
+
+        @keyframes rainbowBg {
+            0% { background-position: 0% 50%; }
+            25% { background-position: 25% 50%; }
+            50% { background-position: 50% 50%; }
+            75% { background-position: 75% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        .main-content {
+            text-align: center;
+            color: white;
+            text-shadow: 3px 3px 0px #000, -3px -3px 0px #000, 3px -3px 0px #000, -3px 3px 0px #000;
+            animation: bounce 0.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(0px) scale(1) rotate(0deg); }
+            100% { transform: translateY(-20px) scale(1.1) rotate(5deg); }
+        }
+
+        .title {
+            font-size: 72px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            animation: textPulse 0.3s ease-in-out infinite alternate;
+        }
+
+        @keyframes textPulse {
+            0% { font-size: 72px; }
+            100% { font-size: 80px; }
+        }
+
+        .face {
+            font-size: 120px;
+            margin: 20px 0;
+            animation: faceRotate 0.2s linear infinite;
+        }
+
+        @keyframes faceRotate {
+            0% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(10deg) scale(1.1); }
+            50% { transform: rotate(0deg) scale(1); }
+            75% { transform: rotate(-10deg) scale(1.1); }
+            100% { transform: rotate(0deg) scale(1); }
+        }
+
+        .subtitle {
+            font-size: 36px;
+            margin-top: 20px;
+            animation: subtitleFlash 0.8s ease-in-out infinite;
+        }
+
+        @keyframes subtitleFlash {
+            0%, 50% { opacity: 1; }
+            25%, 75% { opacity: 0.5; }
+        }
+
+        .instagram-handle {
+            font-size: 48px;
+            font-weight: bold;
+            color: #E4405F;
+            text-shadow: 3px 3px 0px #000, -3px -3px 0px #000, 3px -3px 0px #000, -3px 3px 0px #000;
+            margin: 15px 0;
+            animation: instagramPulse 0.6s ease-in-out infinite alternate;
+        }
+
+        @keyframes instagramPulse {
+            0% { transform: scale(1) rotate(-2deg); color: #E4405F; }
+            100% { transform: scale(1.2) rotate(2deg); color: #F56040; }
+        }
+
+        .floating-text {
+            position: absolute;
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 0px #000;
+            animation: floatAround 2s linear infinite;
+            pointer-events: none;
+        }
+
+        .floating-instagram {
+            color: #E4405F;
+            font-size: 32px;
+            text-shadow: 3px 3px 0px #000;
+            animation: instagramFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes floatAround {
+            0% { transform: translateX(0px) translateY(0px) rotate(0deg); }
+            25% { transform: translateX(20px) translateY(-15px) rotate(90deg); }
+            50% { transform: translateX(0px) translateY(-30px) rotate(180deg); }
+            75% { transform: translateX(-20px) translateY(-15px) rotate(270deg); }
+            100% { transform: translateX(0px) translateY(0px) rotate(360deg); }
+        }
+
+        @keyframes instagramFloat {
+            0% { transform: translateY(0px) scale(1) rotate(0deg); }
+            33% { transform: translateY(-10px) scale(1.1) rotate(120deg); }
+            66% { transform: translateY(5px) scale(0.9) rotate(240deg); }
+            100% { transform: translateY(0px) scale(1) rotate(360deg); }
+        }
+
+        .popup {
+            position: fixed;
+            background: white;
+            border: 3px solid #000;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 5px 5px 0px #000;
+            z-index: 1000;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            min-width: 250px;
+            animation: popupShake 0.1s linear infinite;
+        }
+
+        @keyframes popupShake {
+            0% { transform: translate(0px, 0px); }
+            25% { transform: translate(1px, 1px); }
+            50% { transform: translate(0px, 2px); }
+            75% { transform: translate(2px, 1px); }
+            100% { transform: translate(1px, 0px); }
+        }
+
+        .popup-header {
+            background: #0000ff;
+            color: white;
+            margin: -15px -15px 10px -15px;
+            padding: 5px 15px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .popup-close {
+            background: #ff0000;
+            color: white;
+            border: 1px solid #000;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .popup-close:hover {
+            background: #ff4444;
+        }
+
+        .popup-button {
+            background: #e0e0e0;
+            border: 2px outset #e0e0e0;
+            padding: 5px 15px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .popup-button:active {
+            border: 2px inset #e0e0e0;
+        }
+
+        .cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: #ff0000;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 10000;
+            animation: cursorPulse 0.5s ease-in-out infinite alternate;
+            box-shadow: 0 0 10px #ff0000;
+        }
+
+        @keyframes cursorPulse {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0.7; }
+        }
+
+        .warning-text {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 24px;
+            text-shadow: 2px 2px 0px #000;
+            animation: warningBlink 1s ease-in-out infinite;
+        }
+
+        @keyframes warningBlink {
+            0%, 50% { opacity: 1; }
+            25%, 75% { opacity: 0; }
+        }
+
+        .top-instagram {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #E4405F;
+            font-size: 36px;
+            font-weight: bold;
+            text-shadow: 2px 2px 0px #000;
+            animation: topInstagramBounce 1s ease-in-out infinite;
+            z-index: 999;
+        }
+
+        @keyframes topInstagramBounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: particleFloat 3s linear infinite;
+        }
+
+        @keyframes particleFloat {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+
+        /* 💡 FLASHLIGHT EFFECTS 💡 */
+        .flashlight {
+            position: fixed;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 30%, transparent 70%);
+            pointer-events: none;
+            z-index: 9999;
+            animation: flashlightPulse 0.5s ease-in-out infinite alternate;
+            mix-blend-mode: screen;
+        }
+
+        @keyframes flashlightPulse {
+            0% { 
+                opacity: 0.8; 
+                transform: scale(1);
+                background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.15) 30%, transparent 70%);
+            }
+            100% { 
+                opacity: 1; 
+                transform: scale(1.2);
+                background: radial-gradient(circle, rgba(255,255,0,0.3) 0%, rgba(255,0,255,0.1) 30%, transparent 70%);
+            }
+        }
+
+        .strobe-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 8888;
+            animation: strobeFlash 0.1s linear infinite;
+        }
+
+        @keyframes strobeFlash {
+            0% { opacity: 0; }
+            5% { opacity: 0.9; }
+            10% { opacity: 0; }
+            95% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor" id="cursor"></div>
+    
+    <!-- 💡 FLASHLIGHT EFFECTS 💡 -->
+    <div class="flashlight" id="flashlight1"></div>
+    <div class="flashlight" id="flashlight2"></div>
+    <div class="flashlight" id="flashlight3"></div>
+    <div class="strobe-overlay" id="strobeOverlay"></div>
+    
+    <div class="top-instagram">📸 @w3gj 📸</div>
+    
+    <div class="particles" id="particles"></div>
+    
+    <div class="container">
+        <div class="main-content">
+            <div class="title" id="title">YOU ARE AN IDIOT!</div>
+            <div class="face" id="face">😂</div>
+            <div class="instagram-handle">@w3gj</div>
+            <div class="subtitle" id="subtitle">HA HA HA HA HA HA HA!</div>
+        </div>
+        
+        <div class="floating-text" style="top: 10%; left: 10%;">HAHA!</div>
+        <div class="floating-text floating-instagram" style="top: 15%; right: 15%; animation-delay: 0.5s;">@w3gj</div>
+        <div class="floating-text" style="bottom: 20%; left: 20%; animation-delay: 1s;">PRANKED!</div>
+        <div class="floating-text floating-instagram" style="bottom: 25%; right: 10%; animation-delay: 1.5s;">FOLLOW @w3gj</div>
+        <div class="floating-text" style="top: 50%; left: 5%; animation-delay: 0.8s;">GOTCHA!</div>
+        <div class="floating-text floating-instagram" style="top: 60%; right: 5%; animation-delay: 1.2s;">@w3gj PRANKS!</div>
+        <div class="floating-text floating-instagram" style="top: 30%; left: 80%; animation-delay: 2s;">📸 @w3gj</div>
+        <div class="floating-text floating-instagram" style="bottom: 40%; left: 15%; animation-delay: 2.5s;">INSTA: @w3gj</div>
+    </div>
+    
+    <div class="warning-text">⚠️ PRANKED BY @w3gj ⚠️</div>
+
+    <!-- 🎵 MUSIC STREAMING - CHANGE THE URL BELOW TO YOUR MUSIC LINK 🎵 -->
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="https://www.soundjay.com/misc/sounds/fail-buzzer-02.mp3" type="audio/mpeg">
+        <!-- REPLACE THE URL ABOVE WITH YOUR MUSIC LINK -->
+    </audio>
+
+    <script>
+        // Music control - automatically play background music
+        const music = document.getElementById('backgroundMusic');
+        music.volume = 0.7; // Adjust volume (0.0 to 1.0)
+        
+        // Try to play music (some browsers block autoplay)
+        music.play().catch(e => {
+            console.log('Music autoplay blocked - user interaction needed');
+            // Add click event to start music on first user interaction
+            document.addEventListener('click', () => {
+                music.play();
+            }, { once: true });
+        });
+
+        // Faces and messages to cycle through
+        const faces = ['😂', '🤣', '😆', '😜', '🤪', '😝', '🙃', '😋', '🤡', '👹'];
+        const titles = [
+            'YOU ARE AN IDIOT!',
+            'FOLLOW @w3gj!',
+            'HAHA GOTCHA!',
+            'PRANKED BY @w3gj!',
+            'LOL NOOB!',
+            'REKT BY @w3gj!',
+            'OWNED!',
+            'MORE PRANKS @w3gj!',
+            'EPIC FAIL!',
+            'GET TROLLED!',
+            'CLASSIC MEME!',
+            'OLD SCHOOL PRANK!',
+            '@w3gj STRIKES AGAIN!',
+            'FOLLOW FOR MORE!',
+            'INSTAGRAM: @w3gj'
+        ];
+        const subtitles = [
+            'HA HA HA HA HA HA HA!',
+            'GOT YOU GOOD!',
+            'CLASSIC INTERNET!',
+            'VINTAGE MEME!',
+            'THROWBACK PRANK!',
+            'RETRO TROLLING!',
+            'OLD BUT GOLD!',
+            'TIMELESS CLASSIC!',
+            'FOLLOW @w3gj!',
+            'MORE AT @w3gj!',
+            'PRANKED BY @w3gj!',
+            '@w3gj FOR MORE!'
+        ];
+
+        let faceIndex = 0;
+        let titleIndex = 0;
+        let subtitleIndex = 0;
+        let popupCount = 0;
+
+        // Custom cursor following mouse
+        document.addEventListener('mousemove', (e) => {
+            const cursor = document.getElementById('cursor');
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Cycle through faces
+        setInterval(() => {
+            const faceElement = document.getElementById('face');
+            faceIndex = (faceIndex + 1) % faces.length;
+            faceElement.textContent = faces[faceIndex];
+        }, 200);
+
+        // Cycle through titles
+        setInterval(() => {
+            const titleElement = document.getElementById('title');
+            titleIndex = (titleIndex + 1) % titles.length;
+            titleElement.textContent = titles[titleIndex];
+        }, 800);
+
+        // Cycle through subtitles
+        setInterval(() => {
+            const subtitleElement = document.getElementById('subtitle');
+            subtitleIndex = (subtitleIndex + 1) % subtitles.length;
+            subtitleElement.textContent = subtitles[subtitleIndex];
+        }, 1200);
+
+        // Create floating particles
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.width = Math.random() * 8 + 4 + 'px';
+            particle.style.height = particle.style.width;
+            particle.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            particle.style.animationDelay = Math.random() * 2 + 's';
+            
+            document.getElementById('particles').appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 5000);
+        }
+
+        // Create particles continuously
+        setInterval(createParticle, 300);
+
+        // Create popup windows
+        function createPopup() {
+            const popup = document.createElement('div');
+            popup.className = 'popup';
+            popup.style.left = Math.random() * (window.innerWidth - 300) + 'px';
+            popup.style.top = Math.random() * (window.innerHeight - 200) + 'px';
+            
+            const messages = [
+                'Follow @w3gj for more pranks!',
+                'You have been pranked by @w3gj!',
+                'This is a classic internet meme by @w3gj!',
+                'You fell for it! Follow @w3gj!',
+                'Got you good! - @w3gj',
+                'Follow @w3gj on Instagram!',
+                'More pranks at @w3gj!',
+                'Classic "You are an idiot" prank by @w3gj!',
+                'Vintage internet humor by @w3gj!',
+                'Old school trolling! Follow @w3gj!',
+                '📸 Check out @w3gj for more!',
+                'Subscribe to @w3gj for epic pranks!',
+                'This meme brought to you by @w3gj!',
+                'Want more? Follow @w3gj right now!'
+            ];
+            
+            popup.innerHTML = `
+                <div class="popup-header">
+                    @w3gj Prank Alert!
+                    <button class="popup-close" onclick="this.parentElement.parentElement.remove()">×</button>
+                </div>
+                <p>${messages[Math.floor(Math.random() * messages.length)]}</p>
+                <div style="text-align: center; margin-top: 10px;">
+                    <button class="popup-button" onclick="createMorePopups()">More @w3gj!</button>
+                    <button class="popup-button" onclick="this.parentElement.parentElement.remove()">Follow Later</button>
+                </div>
+            `;
+            
+            document.body.appendChild(popup);
+            
+            // Auto-remove after 5 seconds
+            setTimeout(() => {
+                if (popup.parentElement) {
+                    popup.remove();
+                }
+            }, 5000);
+        }
+
+        // Create multiple popups
+        function createMorePopups() {
+            for (let i = 0; i < 3; i++) {
+                setTimeout(() => createPopup(), i * 200);
+            }
+        }
+
+        // Start creating popups after 2 seconds
+        setTimeout(() => {
+            createPopup();
+            // Continue creating popups every 3-8 seconds
+            setInterval(() => {
+                if (Math.random() < 0.3) { // 30% chance
+                    createPopup();
+                }
+            }, 3000);
+        }, 2000);
+
+        // Prevent right-click
+        document.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+            createPopup();
+        });
+
+        // Prevent F12 and Ctrl+Shift+I
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+                e.preventDefault();
+                createMorePopups();
+            }
+            // Prevent ESC key from exiting fullscreen
+            if (e.key === 'Escape') {
+                e.preventDefault();
+                setTimeout(forceFullscreen, 100); // Re-enter fullscreen
+            }
+        });
+
+        // Click anywhere to create more chaos
+        document.addEventListener('click', () => {
+            if (Math.random() < 0.2) { // 20% chance
+                createPopup();
+            }
+        });
+
+        // Play "audio" simulation with visual feedback
+        function simulateAudio() {
+            document.body.style.filter = 'hue-rotate(' + Math.random() * 360 + 'deg)';
+            setTimeout(() => {
+                document.body.style.filter = 'none';
+            }, 100);
+        }
+
+        setInterval(simulateAudio, 500);
+
+        console.log('🎉 You are an idiot! This is a classic internet meme from the early 2000s! 🎉');
+        console.log('🔊 Imagine this with loud, annoying music playing on repeat! 🔊');
+        console.log('📸 Pranked by @w3gj - Follow for more epic pranks! 📸');
+        console.log('🖥️ FULLSCREEN PRANK ACTIVATED! 💡 FLASHLIGHTS ENGAGED! 😂');
+    </script>
+</body>
+</html>
